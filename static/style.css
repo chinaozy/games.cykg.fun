@@ -1,0 +1,66 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 100%;
+    position: absolute;
+    top: 35vh;
+    bottom: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contentbox {
+    width: 350px;
+    height: 250px;
+    margin: 20px;
+    position: relative;
+    display: inline-block;
+    background-size: 100% 100%;
+    box-shadow: 5px 5px 10px 0px rgb(128, 0, 128, 0.4);
+    border-radius: 10px;
+    border: solid purple;
+    transition: 0.4s;
+}
+
+.contentbox h1 {
+    position: absolute;
+    bottom: 10px;
+    margin: 20px;
+    color: gold;
+    text-shadow: 0.1rem 0.1rem 0.1rem rgb(128, 0, 128);
+}
+
+.contentbox:hover {
+    scale: 0.98;
+    box-shadow: none;
+    border: solid gold;
+}
+
+.title {
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 12vh;
+    line-height: 12vh;
+    color: gold;
+    text-shadow: 0.4rem 0.4rem rgb(128, 0, 128),
+                 0.4rem 0.4rem 1.2rem rgb(128, 0, 128);
+    padding-top: 10vh;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background: url(bg.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+html {
+    height: 100%;
+}
