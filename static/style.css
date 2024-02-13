@@ -45,8 +45,8 @@
 .title {
     text-align: center;
     font-family: Orbitron;
-    font-size: 12vh;
-    line-height: 12vh;
+    font-size: 10vh;
+    line-height: 10vh;
     color: gold;
     text-shadow: 0.4rem 0.4rem rgb(128, 0, 128),
                  0.4rem 0.4rem 1.2rem rgb(128, 0, 128);
