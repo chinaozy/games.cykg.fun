@@ -297,6 +297,6 @@ body {
     text-align: center;
     font-size: 6vh;
     color: gold;
-    text-shadow: 0.4rem 0.4rem rgb(128, 0, 128),
+    text-shadow: 0.2rem 0.2rem rgb(128, 0, 128),
                  0.4rem 0.4rem 1.2rem rgb(128, 0, 128);
 }

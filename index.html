@@ -1,26 +1,66 @@
 <!DOCTYPE html>
 <html lang="zh-Hans-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.loli.net/css2?family=Orbitron:wght@900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.loli.net/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/style.css">
     <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
     <title>KG GAMES</title>
 </head>
-<body>
-    <p class="title">KG GAMES</p>
+
+<body class="theme" id="body">
+    <p class="theme title">KG GAMES</p>
 
     <div class="container">
         <a href="Games/EatKG/">
-            <div class="contentbox" style="background: url(static/EatKG.jpg);">
+            <div class="theme contentbox" style="background: url(static/EatKG.jpg);">
                 <h1>吃掉小KG</h1>
             </div>
         </a>
         <a href="Games/SynthesisKG/">
-            <div class="contentbox" style="background: url(static/SynKG.jpg);">
+            <div class="theme contentbox" style="background: url(static/SynKG.jpg);">
                 <h1>合成大KG</h1>
             </div>
         </a>
+    </div>
+
+    <div class="theme" id="darkModeBtn" onclick="switchMode()"></div>
+
+    <script>
+        //preload images
+        window.onload = function () {
+            setTimeout(function () {
+                new Image().src = "static/dark_mode.svg";
+                new Image().src = "static/bgdark.svg";
+            }, 1000);
+        };
+
+        const darkModeBtn = document.getElementById("darkModeBtn");
+        const elements = document.getElementsByClassName('theme');
+
+        var darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (darkMode) {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].setAttribute("dark", "");
+            }
+        }
+
+        function switchMode() {
+            if (darkMode) {
+                for (i = 0; i < elements.length; i++) {
+                    elements[i].removeAttribute("dark");
+                }
+            } else {
+                for (i = 0; i < elements.length; i++) {
+                    elements[i].setAttribute("dark", "");
+                }
+            }
+            darkMode = !darkMode;
+        }
+    </script>
+
 </body>
+
 </html>

@@ -1,6 +1,12 @@
 * {
     margin: 0px;
     padding: 0px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+html {
+    height: 100%;
 }
 
 .container {
@@ -22,45 +28,94 @@
     position: relative;
     display: inline-block;
     background-size: 100% 100%;
-    box-shadow: 5px 5px 10px 0px rgb(128, 0, 128, 0.4);
+    box-shadow: 0.4rem 0.4rem 1.2rem #22005d48;
     border-radius: 10px;
-    border: solid purple;
-    transition: 0.4s;
+    border: 0.4rem solid #6750a4;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contentbox[dark] {
+    border: 0.4rem solid #6750a4;
+    filter: brightness(80%);
 }
 
 .contentbox h1 {
     position: absolute;
     bottom: 10px;
     margin: 20px;
-    color: gold;
-    text-shadow: 0.1rem 0.1rem 0.1rem rgb(128, 0, 128);
+    color: #E1DCD6;
+    text-shadow: 0.1rem 0.1rem #66746B,
+                 0.1rem 0.1rem 0.4rem #22005daf;
+}
+
+.contentbox[dark] h1 {
+    color: #948F99;
+    text-shadow: 0.1rem 0.1rem #22005d,
+                 0.1rem 0.1rem 0.4rem #22005daf;
 }
 
 .contentbox:hover {
     scale: 0.98;
     box-shadow: none;
-    border: solid gold;
+    border: 0.4rem solid #CFBCFF;
+}
+
+.contentbox:hover[dark] {
+    scale: 0.98;
+    box-shadow: none;
+    border: 0.4rem solid #381E72;
 }
 
 .title {
+    padding-right: 2vh;
     text-align: center;
     font-family: Orbitron;
     font-size: 10vh;
     line-height: 10vh;
-    color: gold;
-    text-shadow: 0.4rem 0.4rem rgb(128, 0, 128),
-                 0.4rem 0.4rem 1.2rem rgb(128, 0, 128);
+    font-style: oblique;
+    color: #E1DCD6;
+    text-shadow: 0.4rem 0.4rem #66746B,
+                 0.4rem 0.4rem 1.2rem #22005daf;
     padding-top: 10vh;
+}
+
+.title[dark] {
+    color:#7a757f;
+    text-shadow: 0.4rem 0.4rem #22005d,
+                 0.4rem 0.4rem 1.2rem #22005daf;
 }
 
 body {
     margin: 0;
     height: 100%;
-    background: url(bg.png) no-repeat;
+    background: url(bg.svg) no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
-html {
-    height: 100%;
+#body[dark] {
+    background-image: url(bgdark.svg);
+}
+
+#darkModeBtn {
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 1vh;
+    box-shadow: 0 0.5vh 1vh 0 #22005d1f;
+    background-color: #E1DCD6;
+    background-image: url(light_mode.svg) ;
+    background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+
+#darkModeBtn[dark] {
+    background-color: #4A4458;
+    background-image: url(dark_mode.svg);
 }
